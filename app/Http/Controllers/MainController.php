@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use Database\Seeders\ArticleSeeder;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -11,6 +13,9 @@ class MainController extends Controller
     }
 
     public function index(){
-        return view('articles');
+        $articles = Article::paginate(6);
+        return view('articles', [
+            'articles' => $articles
+        ]);
     }
 }
