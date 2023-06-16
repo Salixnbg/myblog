@@ -5,7 +5,7 @@
         <h1 class="display-3 text-center">Articles<h1>
         <div class="articles row justify-content-center">
             @foreach ($articles as $article)
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="card my-5">
                         <div class="card-body">
                             <h5 class="card-title" style="font-weight: bold">{{$article->title}}</h5>
@@ -21,7 +21,7 @@
         </div>
         
         <div class="d-flex justify-content-center mt-5">
-            {{$articles->links()}}
+            {{$articles->links('vendor.pagination.custom')}}
         </div>
         
 
