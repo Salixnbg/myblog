@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\MainController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +24,7 @@ Route::get('/articles', [MainController::class, 'index'])->name('articles');
 
 Route::get('/articles/{slug}', [MainController::class, 'show'])->name('article');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
