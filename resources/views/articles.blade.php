@@ -9,8 +9,8 @@
                     <div class="card my-5">
                         <div class="card-body">
                             <h5 class="card-title" style="font-weight: bold">{{$article->title}}</h5>
-                            <p class="card-text" style="font-size: 15px">{{$article->content}}</p>
-                            <a href="#" class="btn btn-primary">
+                            <p class="card-text" style="font-size: 15px">{{$article->subtitle}}</p>
+                            <a href="{{route('article', $article->slug)}}" class="btn btn-primary">
                                 Lire la suite
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
